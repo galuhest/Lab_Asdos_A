@@ -59,9 +59,9 @@ public class Lab06 {
 				String param = inputSplit.nextToken();
 				String nama = param;
 				int check = farmer.buyAyam(param);
-				if (check ==-1) {
+				if (check == -1) {
 					System.out.println("Uang " + farmer.getNama() + " kurang untuk membeli ayam");
-				} else if (check == 0) {
+				} else if (check == -2) {
 					System.out.println("Kandang " + farmer.getNama() + " tidak cukup untuk menampung ayam lagi");
 				} else {
 					System.out.println(farmer.getNama() + " membeli ayam bernama "

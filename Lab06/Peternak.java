@@ -71,8 +71,8 @@ public class Peternak {
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
 			return -1;
-		if(kandang.getayams().size() == kandang.size())
-			return 0;
+		if(kandang.getayams().size() > kandang.size())
+			return -2;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
@@ -135,7 +135,7 @@ public class Peternak {
 		int sum = 0;
 		for(int i = 0; i < kandang.getayams().size(); i++) {
 			Ayam current = kandang.getAyam(i);
-			sum = current.hargaTelor();
+			sum += current.hargaTelor();
 		}
 		setDuit(sum + getDuit());
 	}
