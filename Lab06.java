@@ -5,7 +5,36 @@ import Lab06.*;
 public class Lab06 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		Peternak farmer = new Peternak("Boss", 3000);
+		String namaPeternak = input.nextLine();
+		int uangAwal = Integer.parseInt(input.nextLine());
+		Peternak farmer = new Peternak(namaPeternak, uangAwal);
+		/**
+		 * Beli [namaAyamDibeli] merupakan perintah agar Peternak membeli ayam.
+		 * Beli [namaAyamDibeli] akan mengoutput
+		 * Baris 1 : "[nama farmer] + membeli ayam bernama [nama ayam]"
+		 * Baris 2 : "Uang [nama farmer] sekarang: [uang-sekarang] G"
+		 * 
+		 * 
+		 * Jual [namaAyamDijual] merupakan perintah agar Peternak menjual ayam.
+		 * Jual [namaAyamDijual] akan mengoutput
+		 * Baris 1 : "[nama farmer] + menjual ayam bernama [nama ayam]"
+		 * Baris 2 : "Uang [nama farmer] sekarang: [uang-sekarang] G"
+		 * 
+		 * Angkat [namaAyam] merupakan perintah agar Peternak mengangkat ayam.
+		 * Angkat [namaAyam] akan mengoutput
+		 * Baris 1: "Affection ayam [namaAyam] bertambah 1 :)"
+		 * 
+		 * Kick [namaAyam] merupakan perintah agar Peternak menendang ayam.
+		 * Kick [namaAyam] akan mengoutput
+		 * Baris 1: "Affection ayam [namaAyam] berkurang 1 :("
+		 * 
+		 * Upgrade merupakan perintah agar Peternak mengupgrade kandang.
+		 * Upgrade akan mengoutput
+		 * Baris 1: "[nama farmer] mengupgrade kandang. Kapasitas baru : [kapasitas baru]"
+		 * 
+		 * 
+		 * 
+		 */
 		while (input.hasNext()) {
 			StringTokenizer inputSplit = new StringTokenizer(input.nextLine());
 			if (inputSplit.nextToken().equalsIgnoreCase("Beli")) {
@@ -39,5 +68,7 @@ public class Lab06 {
 						.println("Affection ayam " + nama + " berkurang 1 :(");
 			}
 		}
+		
+		
 	}
 }
