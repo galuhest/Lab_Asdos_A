@@ -17,7 +17,7 @@ public class KandangAyam {
 
 	/**
 	 * Constructor kandang ayam
-	 */
+	 */ 
 	public KandangAyam() {
 		chickens = new ArrayList<Ayam>();
 		size = 1;
