@@ -13,30 +13,30 @@ public class KandangAyam {
 	 * Instance variable dari class KandangAyam, tambahkan yang diperlukan
 	 */
 	private ArrayList<Ayam> chickens;
-	private boolean upgraded;
+	private int size;
 
 	/**
 	 * Constructor kandang ayam
 	 */
 	public KandangAyam() {
 		chickens = new ArrayList<Ayam>();
-		upgraded = false;
+		size = 1;
 	}
 
 	public ArrayList<Ayam> getChickens() {
 		return chickens;
 	}
 
-	public boolean isUpgraded() {
-		return upgraded;
+	public boolean size() {
+		return size;
 	}
 
 	public void setChickens(ArrayList<Ayam> chickens) {
 		this.chickens = chickens;
 	}
 
-	public void setUpgraded(boolean upgraded) {
-		this.upgraded = upgraded;
+	public void setSize(int size) {
+		this.size = size;
 	}
 
 	/**
