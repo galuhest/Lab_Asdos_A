@@ -20,7 +20,7 @@ public class KandangAyam {
 	 */ 
 	public KandangAyam() {
 		ayams = new ArrayList<Ayam>();
-		size = 1;
+		size = 5;
 	}
 
 	public ArrayList<Ayam> getayams() {
