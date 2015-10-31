@@ -113,7 +113,5 @@ public class Lab06 {
 				System.out.println("Uang " + farmer.getNama() + " sekarang: "+ farmer.getDuit() + " G");
 			}
 		}
-		
-		
 	}
 }
