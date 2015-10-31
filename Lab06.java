@@ -101,7 +101,7 @@ public class Lab06 {
 				farmer.kickAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
 				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
-				if (farmer.getKandang().findAyam(nama).getAffection() + 1 ==5) {
+				if (farmer.getKandang().findAyam(nama).getAffection() + 1 == 2 ) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
 				}
 			} else if (command.equalsIgnoreCase("Jualtelur")) {
