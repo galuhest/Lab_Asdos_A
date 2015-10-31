@@ -8,14 +8,16 @@ public class Lab06 {
 		String namaPeternak = input.nextLine();
 		int uangAwal = Integer.parseInt(input.nextLine());
 		Peternak farmer = new Peternak(namaPeternak, uangAwal);
-	/**
+		/**
 		 * Beli [namaAyamDibeli] merupakan perintah agar Peternak membeli ayam.
 		 * Beli [namaAyamDibeli] akan mengoutput
 		 * Baris 1 : "[nama farmer] + membeli ayam bernama [nama ayam]"
 		 * Baris 2 : "Uang [nama farmer] sekarang: [uang-sekarang] G"
 		 * Namun, apabila uang farmer kurang untuk membeli Ayam, maka akan mengoutput
 		 * Baris 1 : "Uang [namaFarmer] kurang untuk membeli ayam"
-		 * 
+		 * Namun, apabila kandang farmer tidak cukup lagi untuk menampung Ayam, maka akan keluar 
+		 * output :
+		 * Baris 1: "Kandang [namaFarmer] tidak cukup untuk menampung ayam lagi"
 		 * 
 		 * Jual [namaAyamDijual] merupakan perintah agar Peternak menjual ayam.
 		 * Jual [namaAyamDijual] akan mengoutput
@@ -51,11 +53,13 @@ public class Lab06 {
 			String command = inputSplit.nextToken();
 			String param = inputSplit.nextToken();
 			if (command.equalsIgnoreCase("Beli")) {
-				String nama = param;
-				farmer.buyAyam(nama);
 				if (farmer.getDuit() ==-1) {
 					System.out.println("Uang " + farmer.getNama() + " kurang untuk membeli ayam");
+				} else if (farmer.getDuit() == 0) {
+					System.out.println("Kandang " + farmer.getNama() + " tidak cukup untuk menampung ayam lagi");
 				} else {
+					String nama = param;
+					farmer.buyAyam(nama);
 					System.out.println(farmer.getNama() + " membeli ayam bernama "
 							+ nama);
 					System.out.println("Uang " + farmer.getNama() + " sekarang: "
