@@ -56,10 +56,6 @@ public class Peternak {
 		return duit;
 	}
 
-	public int getHARGA_AYAM() {
-		return HARGA_BELI_AYAM;
-	}
-
 	/**
 	 * Method ini berfungsi untuk membeli ayam baru, 
 	 * jika kekurangan uang, akan mengembalikan nilai -1
