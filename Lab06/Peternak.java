@@ -71,7 +71,7 @@ public class Peternak {
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
 			return -1;
-		if(kandang.getayams().size() > kandang.size())
+		if(kandang.getayams().size() >= kandang.size())
 			return -2;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
