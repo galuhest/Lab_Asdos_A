@@ -23,15 +23,24 @@ public class Lab06 {
 		 * Angkat [namaAyam] merupakan perintah agar Peternak mengangkat ayam.
 		 * Angkat [namaAyam] akan mengoutput
 		 * Baris 1: "Affection ayam [namaAyam] bertambah 1 :)"
+		 * Jika Ayam mengalami evolusi, maka akan ada output
+		 * Baris 2: "Ayam [namaAyam] berubah menjadi Ayam Emas!"
 		 * 
 		 * Kick [namaAyam] merupakan perintah agar Peternak menendang ayam.
 		 * Kick [namaAyam] akan mengoutput
 		 * Baris 1: "Affection ayam [namaAyam] berkurang 1 :("
+		 * Jika Ayam mengalami devolusi, maka akan ada output 
+		 * Baris 2: "Ayam [namaAyam] berubah menjadi Ayam Biasa"
 		 * 
 		 * Upgrade merupakan perintah agar Peternak mengupgrade kandang.
 		 * Upgrade akan mengoutput
 		 * Baris 1: "[nama farmer] mengupgrade kandang. Kapasitas baru : [kapasitas baru]"
 		 * 
+		 * Jualtelur merupakan perintah agar Peternak menjual telur. Pada perintah ini, diasumsi
+		 * satu ayam hanya menghasilkan 1 telur dan semua telur tersebut dijual.
+		 * Jualtelur akan mengoutput
+		 * Baris 1: "[jumlahTelurTerjual] telur telah terjual"
+		 * Baris 2: "Uang [namaFarmer] sekarang: [uangSekarang] G"
 		 * 
 		 * 
 		 */
@@ -56,6 +65,9 @@ public class Lab06 {
 				farmer.pickUpAyam(nama);
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
+				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == 9) {
+					System.out.println("Ayam " + nama + " berubah menjadi Ayam Emas!");
+				}
 			} else if (inputSplit.nextToken().equalsIgnoreCase("Upgrade")) {
 				farmer.upgradeKandang();
 				System.out.println(farmer.getNama()
@@ -64,8 +76,14 @@ public class Lab06 {
 			} else if (inputSplit.nextToken().equalsIgnoreCase("Kick")) {
 				String nama = inputSplit.nextToken();
 				farmer.kickAyam(nama);
-				System.out
-						.println("Affection ayam " + nama + " berkurang 1 :(");
+				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
+				if (farmer.getKandang().findAyam(nama).getAffection() + 1 ==5) {
+					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
+				}
+			} else if (inputSplit.nextToken().equalsIgnoreCase("Jualtelur")) {
+				farmer.jualTelor();
+				System.out.println(farmer.getKandang().getayams().size() + " telur telah terjual");
+				System.out.println("Uang " + farmer.getNama() + " sekarang: "+ farmer.getDuit() + " G");
 			}
 		}
 		
