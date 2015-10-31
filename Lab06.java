@@ -33,8 +33,8 @@ public class Lab06 {
 		 * Jika Ayam mengalami evolusi, maka akan ada output
 		 * Baris 2: "Ayam [namaAyam] berubah menjadi Ayam Emas!"
 		 * 
-		 * Kick [namaAyam] merupakan perintah agar Peternak menendang ayam.
-		 * Kick [namaAyam] akan mengoutput
+		 * Tendang [namaAyam] merupakan perintah agar Peternak menendang ayam.
+		 * Tendang [namaAyam] akan mengoutput
 		 * Baris 1: "Affection ayam [namaAyam] berkurang 1 :("
 		 * Baris 2: "Affection ayam [namaAyam] sekarang adalah [affectionSekarang]"
 		 * Jika Ayam mengalami devolusi, maka akan ada output 
@@ -96,9 +96,9 @@ public class Lab06 {
 				System.out.println(farmer.getNama()
 						+ " mengupgrade kandang. Kapasitas baru : "
 						+ farmer.getKandang().size());
-			} else if (command.equalsIgnoreCase("Kick")) {
+			} else if (command.equalsIgnoreCase("Tendang")) {
 				String nama = inputSplit.nextToken();
-				farmer.kickAyam(nama);
+				farmer.tendangAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
 				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
 				if (farmer.getKandang().findAyam(nama).getAffection() + 1 == 2 ) {

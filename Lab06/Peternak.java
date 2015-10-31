@@ -111,9 +111,9 @@ public class Peternak {
 	 * Method ini membuat peternak menendang ayam
 	 * @param namaAyam nama ayam yang ditendang
 	 */
-	public void kickAyam(String namaAyam)	{
+	public void tendangAyam(String namaAyam)	{
 		Ayam ayam = kandang.findAyam(namaAyam);
-		ayam.kick();
+		ayam.tendang();
 	}
 	
 	/**

@@ -63,7 +63,7 @@ public class Ayam {
 	 * Method kick berfungsi untuk mengurangi Affection point dari ayam 
 	 * @return
 	 */
-	public void kick()	{
+	public void tendang()	{
 		setAffection(getAffection()-1 );
 		if(isGoldenChicken() && getAffection() < 2) devolve();
 	}
