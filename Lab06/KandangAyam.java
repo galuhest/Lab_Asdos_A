@@ -27,11 +27,11 @@ public class KandangAyam {
 		return ayams;
 	}
 
-	public boolean size() {
+	public int size() {
 		return size;
 	}
 
-	public void setayams(ArrayList<Ayam> ayams) {
+	public void setAyams(ArrayList<Ayam> ayams) {
 		this.ayams = ayams;
 	}
 
@@ -56,7 +56,7 @@ public class KandangAyam {
 	 * Method ini berfungsi untuk menambahkan ayam baru kedalam kandang ayam
 	 * @param namaAyam nama ayam baru yang dimasukkan ke kandang
 	 */
-	public void addChicken(String namaAyam) {
+	public void addAyam(String namaAyam) {
 		if(size > ayams.size()) {
 			Ayam ayamBaru = new Ayam(namaAyam);
 			ayams.add(ayamBaru);
@@ -68,7 +68,7 @@ public class KandangAyam {
 	 * @param namaAyam nama ayam yang ingin dihapus
 	 * @return jenis ayam yang dihapus, true jika Ayam emas
 	 */
-	public boolean removeChicken(String namaAyam) {
+	public boolean removeAyam(String namaAyam) {
 		boolean statusAyam = false;
 		for (int i = 0; i < ayams.size(); i++) {
 			if (ayams.get(i).getName().equals(namaAyam))	{

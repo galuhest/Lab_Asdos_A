@@ -10,7 +10,7 @@ public class Peternak {
 	/**
 	 * Instance variable dari class Peternak, tambahkan yang diperlukan
 	 */
-	private String name;
+	private String nama;
 	private int money;
 	private KandangAyam kandang;
 	private static final int HARGA_BELI_AYAM = 1500;
@@ -19,11 +19,11 @@ public class Peternak {
 
 	/**
 	 * Constructor peternak
-	 * @param name nama peternak
+	 * @param nama nama peternak
 	 * @param money jumlah uang yang dimiliki peternak
 	 */
-	public Peternak(String name, int money) {
-		this.name = name;
+	public Peternak(String nama, int money) {
+		this.nama = nama;
 		this.money = money;
 		kandang = new KandangAyam();
 	}
@@ -36,8 +36,8 @@ public class Peternak {
 		return kandang;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNama(String nama) {
+		this.nama = nama;
 	}
 
 	public void setMoney(int money) {
@@ -48,8 +48,8 @@ public class Peternak {
 		this.kandang = kandang;
 	}
 
-	public String getName() {
-		return name;
+	public String getNama() {
+		return nama;
 	}
 
 	public int getMoney() {
