@@ -65,7 +65,7 @@ public class Peternak {
 	 * @param namaAyam nama ayam yang baru dibeli
 	 * @return uang sekarang
 	 */
-	public int buyChicken(String namaAyam) {
+	public int buyAyam(String namaAyam) {
 		setMoney(getMoney() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
 		return getMoney();
@@ -76,7 +76,7 @@ public class Peternak {
 	 * @param namaAyam nama ayam yang ingin dijual.
 	 * @return uang sekarang
 	 */
-	public int sellChicken(String namaAyam) {
+	public int sellAyam(String namaAyam) {
 		if (kandang.removeAyam(namaAyam))
 			setMoney(getMoney() - HARGA_JUAL_AYAM_EMAS);
 
@@ -90,7 +90,7 @@ public class Peternak {
 	 * Method ini membuat peternak mengangkat ayam
 	 * @param namaAyam nama ayam yang diangkat
 	 */
-	public void pickUpChicken(String namaAyam) {
+	public void pickUpAyam(String namaAyam) {
 		Ayam ayam = kandang.findAyam(namaAyam);
 		ayam.pickUp();
 	}
@@ -99,7 +99,7 @@ public class Peternak {
 	 * Method ini membuat peternak menendang ayam
 	 * @param namaAyam nama ayam yang ditendang
 	 */
-	public void kickChicken(String namaAyam)	{
+	public void kickAyam(String namaAyam)	{
 		Ayam ayam = kandang.findAyam(namaAyam);
 		ayam.kick();
 	}
