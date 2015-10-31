@@ -38,11 +38,11 @@ public class Ayam {
 		return goldenChicken;
 	}
 
-	public void setAffection(int affection) {
+	private void setAffection(int affection) {
 		this.affection = affection;
 	}
 
-	public void setGoldenChicken(boolean goldenChicken) {
+	private void setGoldenChicken(boolean goldenChicken) {
 		this.goldenChicken = goldenChicken;
 	}
 

@@ -66,8 +66,12 @@ public class Peternak {
 	 * @return uang sekarang
 	 */
 	public int buyAyam(String namaAyam) {
+		if(getDuit() < HARGA_BELI_AYAM)
+			return -1;
+		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
+		
 		return getDuit();
 	}
 
@@ -119,5 +123,4 @@ public class Peternak {
 		}
 		setDuit(sum + getDuit());
 	}
-	
 }
