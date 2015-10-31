@@ -88,7 +88,7 @@ public class Lab06 {
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
 				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
-				if (farmer.getKandang().findAyam(nama).isGoldenChicken()) {
+				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == 2) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Emas!");
 				}
 			} else if (command.equalsIgnoreCase("Upgrade")) {
