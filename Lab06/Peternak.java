@@ -11,20 +11,20 @@ public class Peternak {
 	 * Instance variable dari class Peternak, tambahkan yang diperlukan
 	 */
 	private String nama;
-	private int money;
+	private int duit;
 	private KandangAyam kandang;
-	private static final int HARGA_BELI_AYAM = 1500;
-	private static final int HARGA_JUAL_AYAM_BIASA = 1500;
-	private static final int HARGA_JUAL_AYAM_EMAS = 3000;
+	public static final int HARGA_BELI_AYAM = 1500;
+	public static final int HARGA_JUAL_AYAM_BIASA = 1500;
+	public static final int HARGA_JUAL_AYAM_EMAS = 3000;
 
 	/**
 	 * Constructor peternak
 	 * @param nama nama peternak
-	 * @param money jumlah uang yang dimiliki peternak
+	 * @param duit jumlah uang yang dimiliki peternak
 	 */
-	public Peternak(String nama, int money) {
+	public Peternak(String nama, int duit) {
 		this.nama = nama;
-		this.money = money;
+		this.duit = duit;
 		kandang = new KandangAyam();
 	}
 	
@@ -40,8 +40,8 @@ public class Peternak {
 		this.nama = nama;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
+	public void setDuit(int duit) {
+		this.duit = duit;
 	}
 
 	public void setKandang(KandangAyam kandang) {
@@ -52,8 +52,8 @@ public class Peternak {
 		return nama;
 	}
 
-	public int getMoney() {
-		return money;
+	public int getDuit() {
+		return duit;
 	}
 
 	public int getHARGA_AYAM() {
@@ -66,9 +66,9 @@ public class Peternak {
 	 * @return uang sekarang
 	 */
 	public int buyAyam(String namaAyam) {
-		setMoney(getMoney() - HARGA_BELI_AYAM);
+		setDuit(getDuit() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
-		return getMoney();
+		return getDuit();
 	}
 
 	/**
@@ -78,12 +78,12 @@ public class Peternak {
 	 */
 	public int sellAyam(String namaAyam) {
 		if (kandang.removeAyam(namaAyam))
-			setMoney(getMoney() - HARGA_JUAL_AYAM_EMAS);
+			setDuit(getDuit() - HARGA_JUAL_AYAM_EMAS);
 
 		else
-			setMoney(getMoney() - HARGA_JUAL_AYAM_BIASA);
+			setDuit(getDuit() - HARGA_JUAL_AYAM_BIASA);
 
-		return getMoney();
+		return getDuit();
 	}
 
 	/**
@@ -109,6 +109,15 @@ public class Peternak {
 		if(upgradeSize > 0) {
 			kandang.setSize(upgradeSize);
 		}
+	}
+	
+	public void jualTelor() {
+		int sum = 0;
+		for(int i = 0; i < kandang.size(); i++) {
+			Ayam current = kandang.get(i);
+			sum = current.hargaTelor();
+		}
+		setDuit(sum + getDuit());
 	}
 	
 }

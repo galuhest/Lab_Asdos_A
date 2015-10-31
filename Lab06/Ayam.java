@@ -13,6 +13,8 @@ public class Ayam {
 	private String nama;
 	private int affection;
 	private boolean goldenChicken;
+	public static final int HARGA_TELOR = 500;
+	public static final int HARGA_TELOR_MAS = 1000;
 
 	/**
 	 * Constructor Class Ayam
@@ -71,7 +73,7 @@ public class Ayam {
 	}
 	
 	public int hargaTelor() {
-		return goldenChicken ? 1000 : 500;
+		return goldenChicken ? HARGA_TELOR_MAS : HARGA_TELOR;
 	}
 	
 	/**
