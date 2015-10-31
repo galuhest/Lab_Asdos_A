@@ -119,11 +119,12 @@ public class Peternak {
 	/**
 	 * Method ini berfungsi untuk mengupgrade kandang ayam, menmbahkan ukuran kandang 2x lipat ukuran sebelumnya
 	 */
-	public void upgradeKandang() {
+	public int upgradeKandang() {
 		int upgradeSize = kandang.size() * 2;
 		if(upgradeSize > 0) {
 			kandang.setSize(upgradeSize);
-		}
+			return upgradeSize;
+		} else return -1;
 	}
 	
 	/**
