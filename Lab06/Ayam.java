@@ -54,22 +54,18 @@ public class Ayam {
 	 * Method PickUp befungsi untuk menambah Affection point dari ayam
 	 * @return jumlah affection point
 	 */
-	public int pickUp()	{
+	public void pickUp()	{
 		setAffection(getAffection()+1);
 		if(getAffection() == 3) evolve();
-		
-		return getAffection();
 	}
 	
 	/**
 	 * Method kick berfungsi untuk mengurangi Affection point dari ayam 
 	 * @return
 	 */
-	public int kick()	{
+	public void kick()	{
 		setAffection(getAffection()-1 );
 		if(isGoldenChicken() && getAffection() < 2) devolve();
-		
-		return getAffection();
 	}
 	
 	/**
