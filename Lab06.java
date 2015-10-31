@@ -8,11 +8,13 @@ public class Lab06 {
 		String namaPeternak = input.nextLine();
 		int uangAwal = Integer.parseInt(input.nextLine());
 		Peternak farmer = new Peternak(namaPeternak, uangAwal);
-		/**
+	/**
 		 * Beli [namaAyamDibeli] merupakan perintah agar Peternak membeli ayam.
 		 * Beli [namaAyamDibeli] akan mengoutput
 		 * Baris 1 : "[nama farmer] + membeli ayam bernama [nama ayam]"
 		 * Baris 2 : "Uang [nama farmer] sekarang: [uang-sekarang] G"
+		 * Namun, apabila uang farmer kurang untuk membeli Ayam, maka akan mengoutput
+		 * Baris 1 : "Uang [namaFarmer] kurang untuk membeli ayam"
 		 * 
 		 * 
 		 * Jual [namaAyamDijual] merupakan perintah agar Peternak menjual ayam.
@@ -44,43 +46,50 @@ public class Lab06 {
 		 * 
 		 * 
 		 */
-		while (input.hasNext()) {
+		while (input.hasNextLine()) {
 			StringTokenizer inputSplit = new StringTokenizer(input.nextLine());
-			if (inputSplit.nextToken().equalsIgnoreCase("Beli")) {
-				String nama = inputSplit.nextToken();
+			String command = inputSplit.nextToken();
+			String param = inputSplit.nextToken();
+			if (command.equalsIgnoreCase("Beli")) {
+				String nama = param;
 				farmer.buyAyam(nama);
-				System.out.println(farmer.getNama() + " membeli ayam bernama "
-						+ nama);
-				System.out.println("Uang " + farmer.getNama() + " sekarang: "
-						+ farmer.getDuit() + " G");
-			} else if (inputSplit.nextToken().equalsIgnoreCase("Jual")) {
-				String nama = inputSplit.nextToken();
+				if (farmer.getDuit() ==-1) {
+					System.out.println("Uang " + farmer.getNama() + " kurang untuk membeli ayam");
+				} else {
+					System.out.println(farmer.getNama() + " membeli ayam bernama "
+							+ nama);
+					System.out.println("Uang " + farmer.getNama() + " sekarang: "
+							+ farmer.getDuit() + " G");
+				}
+				
+			} else if (command.equalsIgnoreCase("Jual")) {
+				String nama = param;
 				farmer.sellAyam(nama);
 				System.out.println(farmer.getNama() + " menjual ayam bernama "
 						+ nama);
 				System.out.println("Uang " + farmer.getNama() + " sekarang: "
 						+ farmer.getDuit() + " G");
-			} else if (inputSplit.nextToken().equalsIgnoreCase("Angkat")) {
-				String nama = inputSplit.nextToken();
+			} else if (command.equalsIgnoreCase("Angkat")) {
+				String nama = param;
 				farmer.pickUpAyam(nama);
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
 				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == 9) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Emas!");
 				}
-			} else if (inputSplit.nextToken().equalsIgnoreCase("Upgrade")) {
+			} else if (command.equalsIgnoreCase("Upgrade")) {
 				farmer.upgradeKandang();
 				System.out.println(farmer.getNama()
 						+ " mengupgrade kandang. Kapasitas baru : "
 						+ farmer.getKandang().size());
-			} else if (inputSplit.nextToken().equalsIgnoreCase("Kick")) {
-				String nama = inputSplit.nextToken();
+			} else if (command.equalsIgnoreCase("Kick")) {
+				String nama = param;
 				farmer.kickAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
 				if (farmer.getKandang().findAyam(nama).getAffection() + 1 ==5) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
 				}
-			} else if (inputSplit.nextToken().equalsIgnoreCase("Jualtelur")) {
+			} else if (command.equalsIgnoreCase("Jualtelur")) {
 				farmer.jualTelor();
 				System.out.println(farmer.getKandang().getayams().size() + " telur telah terjual");
 				System.out.println("Uang " + farmer.getNama() + " sekarang: "+ farmer.getDuit() + " G");
