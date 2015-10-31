@@ -67,7 +67,7 @@ public class Peternak {
 	 */
 	public int buyChicken(String namaAyam) {
 		setMoney(getMoney() - HARGA_BELI_AYAM);
-		kandang.addChicken(namaAyam);
+		kandang.addAyam(namaAyam);
 		return getMoney();
 	}
 
@@ -77,7 +77,7 @@ public class Peternak {
 	 * @return uang sekarang
 	 */
 	public int sellChicken(String namaAyam) {
-		if (kandang.removeChicken(namaAyam))
+		if (kandang.removeAyam(namaAyam))
 			setMoney(getMoney() - HARGA_JUAL_AYAM_EMAS);
 
 		else
@@ -107,7 +107,7 @@ public class Peternak {
 	public void upgradeKandang() {
 		int upgradeSize = kandang.size() * 2;
 		if(upgradeSize > 0) {
-			kandang.setKandang(upgradeSize);
+			kandang.setSize(upgradeSize);
 		}
 	}
 	
