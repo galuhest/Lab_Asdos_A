@@ -56,9 +56,8 @@ public class Lab06 {
 			StringTokenizer inputSplit = new StringTokenizer(input.nextLine());
 			String command = inputSplit.nextToken();
 			if (command.equalsIgnoreCase("Beli")) {
-				String param = inputSplit.nextToken();
-				String nama = param;
-				int check = farmer.buyAyam(param);
+				String nama= inputSplit.nextToken();
+				int check = farmer.buyAyam(nama);
 				if (check ==-1) {
 					System.out.println("Uang " + farmer.getNama() + " kurang untuk membeli ayam");
 				} else if (check == 0) {
@@ -71,8 +70,7 @@ public class Lab06 {
 				}
 				
 			} else if (command.equalsIgnoreCase("Jual")) {
-				String param = inputSplit.nextToken();
-				String nama = param;
+				String nama = inputSplit.nextToken();
 				int check = farmer.sellAyam(nama);
 				if (check == -1) {
 					System.out.println("Kandang kosong, tidak ada ayam yang bisa dijual");
@@ -84,8 +82,7 @@ public class Lab06 {
 				}
 				
 			} else if (command.equalsIgnoreCase("Angkat")) {
-				String param = inputSplit.nextToken();
-				String nama = param;
+				String nama = inputSplit.nextToken();
 				farmer.pickUpAyam(nama);
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
@@ -99,8 +96,7 @@ public class Lab06 {
 						+ " mengupgrade kandang. Kapasitas baru : "
 						+ farmer.getKandang().size());
 			} else if (command.equalsIgnoreCase("Kick")) {
-				String param = inputSplit.nextToken();
-				String nama = param;
+				String nama = inputSplit.nextToken();
 				farmer.kickAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
 				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
