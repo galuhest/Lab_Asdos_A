@@ -56,7 +56,7 @@ public class Ayam {
 	 */
 	public void pickUp()	{
 		setAffection(getAffection()+1);
-		if(getAffection() == 3) evolve();
+		if((getAffection() == 3) && !isGoldenChicken()) evolve();
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class Ayam {
 	 */
 	public void tendang()	{
 		setAffection(getAffection()-1 );
-		if(isGoldenChicken() && getAffection() < 2) devolve();
+		if((isGoldenChicken() && getAffection() < 2) && isGoldenChicken()) devolve();
 	}
 	
 	/**
