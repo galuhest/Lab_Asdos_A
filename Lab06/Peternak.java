@@ -40,7 +40,7 @@ public class Peternak {
 		this.nama = nama;
 	}
 
-	public void setDuit(int duit) {
+	private void setDuit(int duit) {
 		this.duit = duit;
 	}
 
@@ -61,13 +61,18 @@ public class Peternak {
 	}
 
 	/**
-	 * Method ini berfungsi untuk membeli ayam baru
+	 * Method ini berfungsi untuk membeli ayam baru, 
+	 * jika kekurangan uang, akan mengembalikan nilai -1
+	 * jika kandang penuh akan mengembalikan 0
+	 * 
 	 * @param namaAyam nama ayam yang baru dibeli
 	 * @return uang sekarang
 	 */
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
 			return -1;
+		if(kandang.getayams().size() == kandang.size())
+			return 0;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
@@ -108,6 +113,9 @@ public class Peternak {
 		ayam.kick();
 	}
 	
+	/**
+	 * Method ini berfungsi untuk mengupgrade kandang ayam, menmbahkan ukuran kandang 2x lipat ukuran sebelumnya
+	 */
 	public void upgradeKandang() {
 		int upgradeSize = kandang.size() * 2;
 		if(upgradeSize > 0) {
@@ -115,6 +123,9 @@ public class Peternak {
 		}
 	}
 	
+	/**
+	 * Method ini berfungsi untuk mejual telur, ada 2 jenis telur dengan harga yang berbeda
+	 */
 	public void jualTelor() {
 		int sum = 0;
 		for(int i = 0; i < kandang.size(); i++) {

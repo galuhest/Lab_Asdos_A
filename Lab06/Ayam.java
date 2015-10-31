@@ -72,6 +72,10 @@ public class Ayam {
 		return getAffection();
 	}
 	
+	/**
+	 * Jika ayam adalah ayam emas, akan mengembalikan harga terlur ayam emas
+	 * @return harga terlur dari jenis ayam
+	 */
 	public int hargaTelor() {
 		return goldenChicken ? HARGA_TELOR_MAS : HARGA_TELOR;
 	}
