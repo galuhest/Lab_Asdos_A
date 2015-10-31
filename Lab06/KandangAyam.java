@@ -12,27 +12,27 @@ public class KandangAyam {
 	/**
 	 * Instance variable dari class KandangAyam, tambahkan yang diperlukan
 	 */
-	private ArrayList<Ayam> chickens;
+	private ArrayList<Ayam> ayams;
 	private int size;
 
 	/**
 	 * Constructor kandang ayam
 	 */ 
 	public KandangAyam() {
-		chickens = new ArrayList<Ayam>();
+		ayams = new ArrayList<Ayam>();
 		size = 1;
 	}
 
-	public ArrayList<Ayam> getChickens() {
-		return chickens;
+	public ArrayList<Ayam> getayams() {
+		return ayams;
 	}
 
 	public boolean size() {
 		return size;
 	}
 
-	public void setChickens(ArrayList<Ayam> chickens) {
-		this.chickens = chickens;
+	public void setayams(ArrayList<Ayam> ayams) {
+		this.ayams = ayams;
 	}
 
 	public void setSize(int size) {
@@ -45,9 +45,9 @@ public class KandangAyam {
 	 * @return ayam yang dicari
 	 */
 	public Ayam findChicken(String namaAyam) {
-		for (int i = 0; i < chickens.size(); i++) {
-			if (chickens.get(i).getName().equals(namaAyam))
-				return chickens.get(i);
+		for (int i = 0; i < ayams.size(); i++) {
+			if (ayams.get(i).getName().equals(namaAyam))
+				return ayams.get(i);
 		}
 		return null;
 	}
@@ -57,8 +57,10 @@ public class KandangAyam {
 	 * @param namaAyam nama ayam baru yang dimasukkan ke kandang
 	 */
 	public void addChicken(String namaAyam) {
-		Ayam ayamBaru = new Ayam(namaAyam);
-		chickens.add(ayamBaru);
+		if(size > ayams.size()) {
+			Ayam ayamBaru = new Ayam(namaAyam);
+			ayams.add(ayamBaru);
+		}
 	}
 
 	/**
@@ -68,10 +70,10 @@ public class KandangAyam {
 	 */
 	public boolean removeChicken(String namaAyam) {
 		boolean statusAyam = false;
-		for (int i = 0; i < chickens.size(); i++) {
-			if (chickens.get(i).getName().equals(namaAyam))	{
-				statusAyam = chickens.get(i).isGoldenChicken();
-				chickens.remove(i);
+		for (int i = 0; i < ayams.size(); i++) {
+			if (ayams.get(i).getName().equals(namaAyam))	{
+				statusAyam = ayams.get(i).isGoldenChicken();
+				ayams.remove(i);
 			}
 		}
 		return statusAyam;
