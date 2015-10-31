@@ -132,7 +132,7 @@ public class Peternak {
 	 */
 	public void jualTelor() {
 		int sum = 0;
-		for(int i = 0; i < kandang.size(); i++) {
+		for(int i = 0; i < kandang.getayams().size(); i++) {
 			Ayam current = kandang.getAyam(i);
 			sum = current.hargaTelor();
 		}
