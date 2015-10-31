@@ -91,7 +91,7 @@ public class Peternak {
 	 * @param namaAyam nama ayam yang diangkat
 	 */
 	public void pickUpChicken(String namaAyam) {
-		Ayam ayam = kandang.findChicken(namaAyam);
+		Ayam ayam = kandang.findAyam(namaAyam);
 		ayam.pickUp();
 	}
 	
@@ -100,7 +100,7 @@ public class Peternak {
 	 * @param namaAyam nama ayam yang ditendang
 	 */
 	public void kickChicken(String namaAyam)	{
-		Ayam ayam = kandang.findChicken(namaAyam);
+		Ayam ayam = kandang.findAyam(namaAyam);
 		ayam.kick();
 	}
 	

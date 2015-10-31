@@ -44,7 +44,7 @@ public class KandangAyam {
 	 * @param namaAyam nama ayam yang dicari
 	 * @return ayam yang dicari
 	 */
-	public Ayam findChicken(String namaAyam) {
+	public Ayam findAyam(String namaAyam) {
 		for (int i = 0; i < ayams.size(); i++) {
 			if (ayams.get(i).getName().equals(namaAyam))
 				return ayams.get(i);
