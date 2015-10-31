@@ -26,6 +26,10 @@ public class KandangAyam {
 	public ArrayList<Ayam> getayams() {
 		return ayams;
 	}
+	
+	public Ayam getAyam(int index)	{
+		return ayams.get(index);
+	}
 
 	public int size() {
 		return size;

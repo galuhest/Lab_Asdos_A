@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import Lab06.*;
+
 public class Lab06 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);

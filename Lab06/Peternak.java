@@ -114,7 +114,7 @@ public class Peternak {
 	public void jualTelor() {
 		int sum = 0;
 		for(int i = 0; i < kandang.size(); i++) {
-			Ayam current = kandang.get(i);
+			Ayam current = kandang.getAyam(i);
 			sum = current.hargaTelor();
 		}
 		setDuit(sum + getDuit());
