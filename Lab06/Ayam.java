@@ -10,15 +10,15 @@ public class Ayam {
 	/**
 	 * Instance variable dari class Ayam, tambahkan yang diperlukan
 	 */
-	private String name;
+	private String nama;
 	private int affection;
 	private boolean goldenChicken;
 
 	/**
 	 * Constructor Class Ayam
 	 */
-	public Ayam(String name) {
-		this.name = name;
+	public Ayam(String nama) {
+		this.nama = nama;
 		this.affection = 0;
 		this.goldenChicken = false;
 	}
@@ -45,7 +45,7 @@ public class Ayam {
 	}
 
 	public String getName() {
-		return name;
+		return nama;
 	}
 
 	/**
@@ -68,6 +68,10 @@ public class Ayam {
 		if(isGoldenChicken() && getAffection() < 5) devolve();
 		
 		return getAffection();
+	}
+	
+	public int hargaTelor() {
+		return goldenChicken ? 1000 : 500;
 	}
 	
 	/**
