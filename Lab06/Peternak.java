@@ -104,4 +104,11 @@ public class Peternak {
 		ayam.kick();
 	}
 	
+	public void upgradeKandang() {
+		int upgradeSize = kandang.size() * 2;
+		if(upgradeSize > 0) {
+			kandang.setKandang(upgradeSize);
+		}
+	}
+	
 }
