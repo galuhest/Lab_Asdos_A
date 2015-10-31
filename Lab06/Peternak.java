@@ -87,10 +87,10 @@ public class Peternak {
 	 */
 	public int sellAyam(String namaAyam) {
 		if (kandang.removeAyam(namaAyam))
-			setDuit(getDuit() - HARGA_JUAL_AYAM_EMAS);
+			setDuit(getDuit() + HARGA_JUAL_AYAM_EMAS);
 
 		else
-			setDuit(getDuit() - HARGA_JUAL_AYAM_BIASA);
+			setDuit(getDuit() + HARGA_JUAL_AYAM_BIASA);
 
 		return getDuit();
 	}
