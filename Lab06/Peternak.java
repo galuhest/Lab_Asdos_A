@@ -82,10 +82,13 @@ public class Peternak {
 
 	/**
 	 * Method ini berfungsi untuk menjual ayam, harga tergantung jenis ayam
+	 * Jika tidak ada ayam yang tersedia, return -1
 	 * @param namaAyam nama ayam yang ingin dijual.
 	 * @return uang sekarang
 	 */
 	public int sellAyam(String namaAyam) {
+		if(kandang.getayams().size() == 0) 
+			return -1;
 		if (kandang.removeAyam(namaAyam))
 			setDuit(getDuit() + HARGA_JUAL_AYAM_EMAS);
 
