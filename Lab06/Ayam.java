@@ -15,6 +15,7 @@ public class Ayam {
 	private boolean goldenChicken;
 	public static final int HARGA_TELOR = 500;
 	public static final int HARGA_TELOR_MAS = 1000;
+	public static final int GOLDEN_CHICKEN_THRESHOLD = 3;
 
 	/**
 	 * Constructor Class Ayam
@@ -56,7 +57,7 @@ public class Ayam {
 	 */
 	public void pickUp()	{
 		setAffection(getAffection()+1);
-		if((getAffection() == 3) && !isGoldenChicken()) evolve();
+		if(!isGoldenChicken() && (getAffection() == GOLDEN_CHICKEN_THRESHOLD)) evolve();
 	}
 	
 	/**
@@ -64,8 +65,8 @@ public class Ayam {
 	 * @return
 	 */
 	public void tendang()	{
-		setAffection(getAffection()-1 );
-		if((isGoldenChicken() && getAffection() < 2) && isGoldenChicken()) devolve();
+		setAffection(getAffection()-1);
+		if(isGoldenChicken() && (getAffection() < GOLDEN_CHICKEN_THRESHOLD-1)) devolve();
 	}
 	
 	/**
