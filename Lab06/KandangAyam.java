@@ -31,7 +31,7 @@ public class KandangAyam {
 		return ayams.get(index);
 	}
 
-	public int size() {
+	public int getSize() {
 		return size;
 	}
 
