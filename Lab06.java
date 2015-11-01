@@ -87,7 +87,7 @@ public class Lab06 {
 				farmer.pickUpAyam(nama);
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
-				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
+				System.out.println("Affection ayam " + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
 				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == 2) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Emas!");
 				}
@@ -100,7 +100,7 @@ public class Lab06 {
 				String nama = inputSplit.nextToken();
 				farmer.tendangAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
-				System.out.println("Affection ayam" + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
+				System.out.println("Affection ayam " + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
 				if (farmer.getKandang().findAyam(nama).getAffection() + 1 == 2 ) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
 				}
