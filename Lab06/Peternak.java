@@ -13,11 +13,17 @@ public class Peternak {
 	private String nama;
 	private int duit;
 	private KandangAyam kandang;
+	
 	public static final int HARGA_BELI_AYAM = 1500;
 	public static final int HARGA_JUAL_AYAM_BIASA = 1500;
 	public static final int HARGA_JUAL_AYAM_EMAS = 3000;
+	
 	public static final int HARGA_TELUR = 500;
 	public static final int HARGA_TELUR_MAS = 1000;
+	
+	
+	public static final int ERRORCODE_NOT_ENOUGH_MONEY = -1;
+	public static final int ERRORCODE_NOT_ENOUGH_SPACE = -2;
 
 	/**
 	 * Constructor peternak
@@ -68,9 +74,9 @@ public class Peternak {
 	 */
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
-			return -1;
+			return ERRORCODE_NOT_ENOUGH_MONEY;
 		if(kandang.getAyams().size() >= kandang.getSize())
-			return -2;
+			return ERRORCODE_NOT_ENOUGH_SPACE;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
 		kandang.addAyam(namaAyam);
@@ -85,8 +91,6 @@ public class Peternak {
 	 * @return uang sekarang
 	 */
 	public int sellAyam(String namaAyam) {
-		if(kandang.getAyams().size() == 0) 
-			return -1;
 		if (kandang.removeAyam(namaAyam))
 			setDuit(getDuit() + HARGA_JUAL_AYAM_EMAS);
 
@@ -117,13 +121,11 @@ public class Peternak {
 	/**
 	 * Method ini berfungsi untuk mengupgrade kandang ayam, menambahkan ukuran kandang 2x lipat ukuran sebelumnya
 	 */
-	public int upgradeKandang() {
+	public void upgradeKandang() {
 		int upgradeSize = kandang.getSize() * 2;
 		if(upgradeSize > 0) {
 			kandang.setSize(upgradeSize);
-			return upgradeSize;
 		} 
-		else return -1;
 	}
 	
 	/**

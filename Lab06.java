@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import Lab06.*;
+import Lab06.Ayam;
+import Lab06.KandangAyam;
+import Lab06.Peternak;
 
 public class Lab06 {
 	public static void main(String[] args) {
@@ -59,9 +61,9 @@ public class Lab06 {
 				String param = inputSplit.nextToken();
 				String nama = param;
 				int check = farmer.buyAyam(param);
-				if (check == -1) {
+				if (check == Peternak.ERRORCODE_NOT_ENOUGH_MONEY) {
 					System.out.println("Uang " + farmer.getNama() + " kurang untuk membeli ayam");
-				} else if (check == -2) {
+				} else if (check == Peternak.ERRORCODE_NOT_ENOUGH_SPACE) {
 					System.out.println("Kandang " + farmer.getNama() + " tidak cukup untuk menampung ayam lagi");
 				} else {
 					System.out.println(farmer.getNama() + " membeli ayam bernama "
@@ -73,14 +75,10 @@ public class Lab06 {
 			} else if (command.equalsIgnoreCase("Jual")) {
 				String nama = inputSplit.nextToken();
 				int check = farmer.sellAyam(nama);
-				if (check == -1) {
-					System.out.println("Kandang kosong, tidak ada ayam yang bisa dijual");
-				} else {
-					System.out.println(farmer.getNama() + " menjual ayam bernama "
-							+ nama);
-					System.out.println("Uang " + farmer.getNama() + " sekarang: "
-							+ farmer.getDuit() + " G");
-				}
+				System.out.println(farmer.getNama() + " menjual ayam bernama "
+						+ nama);
+				System.out.println("Uang " + farmer.getNama() + " sekarang: "
+						+ farmer.getDuit() + " G");
 				
 			} else if (command.equalsIgnoreCase("Angkat")) {
 				String nama = inputSplit.nextToken();
@@ -88,7 +86,7 @@ public class Lab06 {
 				System.out
 						.println("Affection ayam " + nama + " bertambah 1 :)");
 				System.out.println("Affection ayam " + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
-				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == 2) {
+				if (farmer.getKandang().findAyam(nama).getAffection() - 1 == Ayam.GOLDEN_CHICKEN_THRESHOLD - 1) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Emas!");
 				}
 			} else if (command.equalsIgnoreCase("Upgrade")) {
@@ -101,7 +99,7 @@ public class Lab06 {
 				farmer.tendangAyam(nama);
 				System.out.println("Affection ayam " + nama + " berkurang 1 :(");
 				System.out.println("Affection ayam " + nama + " sekarang adalah " + farmer.getKandang().findAyam(nama).getAffection());
-				if (farmer.getKandang().findAyam(nama).getAffection() + 1 == 2 ) {
+				if (farmer.getKandang().findAyam(nama).getAffection() + 1 == Ayam.GOLDEN_CHICKEN_THRESHOLD - 1) {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
 				}
 			} else if (command.equalsIgnoreCase("Jualtelur")) {
