@@ -95,7 +95,7 @@ public class Lab06 {
 				farmer.upgradeKandang();
 				System.out.println(farmer.getNama()
 						+ " mengupgrade kandang. Kapasitas baru : "
-						+ farmer.getKandang().size());
+						+ farmer.getKandang().getSize());
 			} else if (command.equalsIgnoreCase("Tendang")) {
 				String nama = inputSplit.nextToken();
 				farmer.tendangAyam(nama);

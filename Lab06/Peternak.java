@@ -69,7 +69,7 @@ public class Peternak {
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
 			return -1;
-		if(kandang.getayams().size() >= kandang.size())
+		if(kandang.getayams().size() >= kandang.getSize())
 			return -2;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
@@ -118,7 +118,7 @@ public class Peternak {
 	 * Method ini berfungsi untuk mengupgrade kandang ayam, menambahkan ukuran kandang 2x lipat ukuran sebelumnya
 	 */
 	public int upgradeKandang() {
-		int upgradeSize = kandang.size() * 2;
+		int upgradeSize = kandang.getSize() * 2;
 		if(upgradeSize > 0) {
 			kandang.setSize(upgradeSize);
 			return upgradeSize;
