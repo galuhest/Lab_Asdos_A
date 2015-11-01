@@ -23,7 +23,7 @@ public class KandangAyam {
 		size = 5;
 	}
 
-	public ArrayList<Ayam> getayams() {
+	public ArrayList<Ayam> getAyams() {
 		return ayams;
 	}
 	
@@ -50,7 +50,7 @@ public class KandangAyam {
 	 */
 	public Ayam findAyam(String namaAyam) {
 		for (int i = 0; i < ayams.size(); i++) {
-			if (ayams.get(i).getName().equals(namaAyam))
+			if (ayams.get(i).getNama().equals(namaAyam))
 				return ayams.get(i);
 		}
 		return null;
@@ -75,7 +75,7 @@ public class KandangAyam {
 	public boolean removeAyam(String namaAyam) {
 		boolean statusAyam = false;
 		for (int i = 0; i < ayams.size(); i++) {
-			if (ayams.get(i).getName().equals(namaAyam))	{
+			if (ayams.get(i).getNama().equals(namaAyam))	{
 				statusAyam = ayams.get(i).isGoldenChicken();
 				ayams.remove(i);
 			}

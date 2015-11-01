@@ -45,7 +45,7 @@ public class Ayam {
 		this.goldenChicken = goldenChicken;
 	}
 
-	public String getName() {
+	public String getNama() {
 		return nama;
 	}
 

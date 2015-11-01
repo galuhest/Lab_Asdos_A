@@ -69,7 +69,7 @@ public class Peternak {
 	public int buyAyam(String namaAyam) {
 		if(getDuit() < HARGA_BELI_AYAM)
 			return -1;
-		if(kandang.getayams().size() >= kandang.getSize())
+		if(kandang.getAyams().size() >= kandang.getSize())
 			return -2;
 		
 		setDuit(getDuit() - HARGA_BELI_AYAM);
@@ -85,7 +85,7 @@ public class Peternak {
 	 * @return uang sekarang
 	 */
 	public int sellAyam(String namaAyam) {
-		if(kandang.getayams().size() == 0) 
+		if(kandang.getAyams().size() == 0) 
 			return -1;
 		if (kandang.removeAyam(namaAyam))
 			setDuit(getDuit() + HARGA_JUAL_AYAM_EMAS);
@@ -131,7 +131,7 @@ public class Peternak {
 	 */
 	public void jualTelur() {
 		int sum = 0;
-		for(int i = 0; i < kandang.getayams().size(); i++) {
+		for(int i = 0; i < kandang.getAyams().size(); i++) {
 			Ayam current = kandang.getAyam(i);
 			sum += current.isGoldenChicken() ? HARGA_TELUR_MAS : HARGA_TELUR;
 		}

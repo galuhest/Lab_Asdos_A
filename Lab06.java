@@ -106,7 +106,7 @@ public class Lab06 {
 				}
 			} else if (command.equalsIgnoreCase("Jualtelur")) {
 				farmer.jualTelur();
-				System.out.println(farmer.getKandang().getayams().size() + " telur telah terjual");
+				System.out.println(farmer.getKandang().getAyams().size() + " telur telah terjual");
 				System.out.println("Uang " + farmer.getNama() + " sekarang: "+ farmer.getDuit() + " G");
 			}
 		}
