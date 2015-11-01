@@ -13,8 +13,6 @@ public class Ayam {
 	private String nama;
 	private int affection;
 	private boolean goldenChicken;
-	public static final int HARGA_TELOR = 500;
-	public static final int HARGA_TELOR_MAS = 1000;
 	public static final int GOLDEN_CHICKEN_THRESHOLD = 3;
 
 	/**
@@ -67,14 +65,6 @@ public class Ayam {
 	public void tendang()	{
 		setAffection(getAffection()-1);
 		if(isGoldenChicken() && (getAffection() < GOLDEN_CHICKEN_THRESHOLD-1)) devolve();
-	}
-	
-	/**
-	 * Jika ayam adalah ayam emas, akan mengembalikan harga terlur ayam emas
-	 * @return harga terlur dari jenis ayam
-	 */
-	public int hargaTelor() {
-		return goldenChicken ? HARGA_TELOR_MAS : HARGA_TELOR;
 	}
 	
 	/**

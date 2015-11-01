@@ -105,7 +105,7 @@ public class Lab06 {
 					System.out.println("Ayam " + nama + " berubah menjadi Ayam Biasa");
 				}
 			} else if (command.equalsIgnoreCase("Jualtelur")) {
-				farmer.jualTelor();
+				farmer.jualTelur();
 				System.out.println(farmer.getKandang().getayams().size() + " telur telah terjual");
 				System.out.println("Uang " + farmer.getNama() + " sekarang: "+ farmer.getDuit() + " G");
 			}

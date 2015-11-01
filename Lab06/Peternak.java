@@ -16,6 +16,8 @@ public class Peternak {
 	public static final int HARGA_BELI_AYAM = 1500;
 	public static final int HARGA_JUAL_AYAM_BIASA = 1500;
 	public static final int HARGA_JUAL_AYAM_EMAS = 3000;
+	public static final int HARGA_TELUR = 500;
+	public static final int HARGA_TELUR_MAS = 1000;
 
 	/**
 	 * Constructor peternak
@@ -127,11 +129,11 @@ public class Peternak {
 	/**
 	 * Method ini berfungsi untuk mejual telur, ada 2 jenis telur dengan harga yang berbeda
 	 */
-	public void jualTelor() {
+	public void jualTelur() {
 		int sum = 0;
 		for(int i = 0; i < kandang.getayams().size(); i++) {
 			Ayam current = kandang.getAyam(i);
-			sum += current.hargaTelor();
+			sum += current.isGoldenChicken() ? HARGA_TELUR_MAS : HARGA_TELUR;
 		}
 		setDuit(sum + getDuit());
 	}
